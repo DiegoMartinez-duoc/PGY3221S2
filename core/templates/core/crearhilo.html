@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+    {% load static %}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SayThread</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'core/css/miCuenta.css' %}">
+    </head>
+    <body>
+
+        <nav>
+            <div class="titulo">
+                <img id="logo-imagen" src="{% static 'core/img/threadIcon.png' %}"/>
+                <a id="gothread" href="{% url 'home' %}"><h1 style="position: absolute;
+                    top: -10px;
+                    left: 20px;
+                    color: white;">Say<br>Thread</h1></a>
+            </div>
+            <div class="right-nav">
+                <div id = "perfil">
+                    <img class = "imagen" src="{% static 'core/img/fotoperfil.png' %}" draggable="false">
+                    <h7 id = "nombre-usuario">{{ nombre_usuario }}</h7>
+                </div>
+                <a href="{% url 'cerrar_sesion' %}">
+                    <button type="button" id="cerrar-sesion">Cerrar sesión</button>
+                </a>
+            </div>
+            
+        </nav>
+       
+        <div class="wrapper">
+
+            <div class = "dime-hilo">
+                <div class ="primera-caja">
+                    <h5 class = "nombre-perfil-or" id="perfil-usuario">{{ nombre_usuario }}</h5>
+                    <div class = "foto-or">
+                        <img class = "perfil-or" src="{% static 'core/img/fotoperfil.png' %}" draggable="false">
+                    </div>
+                </div>
+                <div class ="segunda-caja">
+
+                    <h5 class="bloque-superior"></h5>
+                    <h5 class="apertura"></h5>
+
+                    
+                    <form id="crear-thread-form" method="POST" action="{% url 'subir_thread' %}" class="validacion" enctype="multipart/form-data" novalidate>
+                      
+                        
+                        <!-- Campo para el título del thread -->
+                        <div class="primera-linea">
+                            <input style="position: relative; width: 350px; margin-top: 0px; margin-left: 15px;"
+                                   name="nombre_thread" 
+                                   type="text" 
+                                   class="formulario" 
+                                   placeholder="Título del Thread"
+                                   maxlength="255"
+                                   required>
+                            <div class="error-message" id="titulo-error"></div>
+                        </div>
+                        
+                        <!-- Campo para el mensaje del thread -->
+                        <div class="segunda-linea">
+                            <textarea style="position: relative; margin-bottom: 15px; width: 350px; margin-top: 20px; margin-left: 15px;" 
+                                      name="mensaje" 
+                                      class="formulario" 
+                                      rows="5"
+                                      placeholder="Escribe tu mensaje aquí..."
+                                      required></textarea>
+                            <div class="error-message" id="mensaje-error"></div>
+                        </div>
+                        
+                        <!-- Campo para la imagen (opcional) -->
+                        <div class="tercera-linea">
+                            <label style="position: relative; width: 350px; margin-left: 15px;" 
+                            for="imagen-input" class="file-label">
+                                <span style="color: white;">Subir imagen (opcional)</span>
+                                <input style="color: white;" type="file" 
+                                       name="imagen" 
+                                       id="imagen-input"
+                                       accept="image/*">
+                            </label>
+                            <div class="error-message" id="imagen-error"></div>
+                        </div>
+                        
+                        <!-- Botón de enviar -->
+                        <div class="boton">
+                            {% csrf_token %}
+                            <button style="margin-top: 73px;"  type="submit" class="editar">Publicar Thread</button>
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>  
+        </div>
+        
+        <script src="{% static 'core/js/micuenta.js' %}"></script>
+    </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+    {% load static %}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SayThread</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'core/css/page.css' %}">
+    </head>
+    <body>
+       
+        <div class="wrapper">
+            <div class="titulo">
+                <img id="logo-imagen" src="{% static 'core/img/threadIcon.png' %}"/>
+                <a id="gothread" href="{% url 'home' %}"><h1 style="position: absolute;
+                    top: -10px;
+                    color: white;">Say<br>Thread</h1></a>
+            </div>
+
+            <!-- <a href="index.html"><button class = "inicio">Volver a inicio</button></a> -->
+
+            <h2 class="text-center">Login completo, volver a inicio <span id = "ir-registro"><a href="{% url 'home' %}" style="color: rgb(210, 210, 210);">aquí</a></span></h2>
+            <!-- <form id="registro-formulario" method="POST" action="{% url 'enviarregistro' %}" class="validacion" novalidate>
+                <div class="primera-linea">
+                    <input name="nombre" type="text" class="formulario" id="nombre-input" placeholder="Nombre" required>
+                </div>
+                <div class="segunda-linea">
+                    <input name="nombre_usuario" type="text" class="formulario" id="nombre-usuario-input" placeholder="Nombre de Usuario" required>
+                    <input name="email" type="email" class="formulario" id="email-input" placeholder="Correo Electrónico" required>
+                </div>
+                <div class="tercera-linea">
+                    <input name="contrasena" type="password" class="formulario" id="contrasena-input" placeholder="Contraseña" required>
+                    <input type="password" class="formulario" id="confirmar-contrasena-input" placeholder="Repetir Contraseña" required>
+                </div>
+                <div class="cuarta-linea">
+                    <input name="fecha_nacimiento" type="date" class="formulario" id="fecha-input" placeholder="Fecha de Nacimiento" required>
+                </div>
+                <div class ="boton">
+                    {% csrf_token %}
+                   
+                    <button type="submit" class="registrar">Registrar</button>
+                </div>
+            </form> -->
+
+            <!-- <h7 class ="ir-registro">¿Ya tienes una cuenta? Inicia sesión <span id = "ir-registro"><a href="{% url 'inicio' %}" style="color: rgb(210, 210, 210);">aquí</a></span></h7> -->
+        </div>
+        
+        <!-- <script src="{% static 'core/js/registro.js' %}"></script> -->
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

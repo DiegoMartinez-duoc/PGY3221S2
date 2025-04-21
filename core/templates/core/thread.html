@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+    {% load static %}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SayThread</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'core/css/hilos.css' %}">
+    </head>
+    <body>
+
+        <nav>
+            <div class="titulo">
+                <img id="logo-imagen" src="{% static 'core/img/threadIcon.png' %}"/>
+                <a id="gothread" href="{% url 'home' %}"><h1 style="position: absolute;
+                    top: -10px;
+                    left: 20px;
+                    color: white;">Say<br>Thread</h1></a>
+            </div>
+            <div class="right-nav">
+                <div id = "perfil">
+                    <img class = "imagen" src="{% static 'core/img/fotoperfil.png' %}" draggable="false">
+                    <h7 id = "nombre-usuario">{{ nombre_usuario }}</h7>
+                </div>
+                <a href="{% url 'cerrar_sesion' %}">
+                    <button type="button" id="cerrar-sesion">Cerrar sesión</button>
+                </a>
+            </div>
+            
+        </nav>
+       
+        <div class="wrapper">
+
+            <div class = "dime-hilo">
+                <div class ="primera-caja">
+                    <h5 class = "nombre-perfil-or">{{ threads.usuario.nombre_usuario }}</h5>
+                    <div class = "foto-or">
+                        <img class = "perfil-or" src="{% static 'core/img/fotoperfil.png' %}" draggable="false">
+                    </div>
+                </div>
+                
+                <div class ="segunda-caja">
+                    <h5 class="bloque-superior"></h5>
+                    <h5 class="apertura">{{ threads.mensaje }}</h5>
+                    {% if threads.imagen %}
+                        <img class = "imagen-or" src="{{ threads.imagen.url }}" draggable="false">
+                    {% endif %}
+                    <h5 class = "hilo-info">
+                        Publicado el {{ threads.fecha_creacion }}
+                    </h5>
+                    <button class="boton-like">
+                        <img src="{% static 'core/img/like.png' %}" alt="Like" class="icono">
+                    </button>
+                    <h6 class = "cantidad-like"><span class="cantidad">{{ threads.likes }}</span></h6>
+                </div>
+            </div>
+
+            {% for comentario in comentarios %}
+
+            <div class = "dime-hilo">
+                <div class ="primera-caja">
+                    <h5 class = "nombre-perfil-or">{{ comentario.usuario.nombre_usuario }}</h5>
+                    <div class = "foto-or">
+                        <img class = "perfil-or" src="{% static 'core/img/fotoperfil.png' %}" draggable="false">
+                    </div>
+                </div>
+                
+                <div class ="segunda-caja">
+                    <h5 class="bloque-superior"></h5>
+                    <h5 class="apertura">{{ comentario.mensaje }}</h5>
+                </div>
+            </div>
+
+            {% endfor %}
+
+            
+
+            <div class = "dime-hilo">
+                <div class ="primera-caja">
+                    <h5 class = "nombre-perfil-or" id="perfil-usuario">{{ nombre_usuario }}</h5>
+                    <div class = "foto-or">
+                        <img class = "perfil-or" src="{% static 'core/img/fotoperfil.png' %}" draggable="false">
+                    </div>
+                </div>
+                <div class ="segunda-caja">
+                    <form method="POST" action="{% url 'comentar' %}">
+                        <textarea class="comentario" name="comentario" placeholder="Agregar un comentario" required></textarea>
+                        {% csrf_token %}
+                        <button class="publicar">Publicar</button>
+                    </form>
+                </div>
+            </div>  
+        </div>
+        
+        <!-- <script src="js/hilos.js"></script>  -->
+    </body>
+</html>

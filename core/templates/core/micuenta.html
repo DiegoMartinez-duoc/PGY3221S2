@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+    {% load static %}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SayThread</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'core/css/miCuenta.css' %}">
+    </head>
+    <body>
+
+        <nav>
+            <div class="titulo">
+                <img id="logo-imagen" src="{% static 'core/img/threadIcon.png' %}"/>
+                <a id="gothread" href="{% url 'home' %}"><h1 style="position: absolute;
+                    top: -10px;
+                    left: 20px;
+                    color: white;">Say<br>Thread</h1></a>
+            </div>
+            <div class="right-nav">
+                <div id = "perfil">
+                    <img class = "imagen" src="{% static 'core/img/fotoperfil.png' %}" draggable="false">
+                    <h7 id = "nombre-usuario">{{ nombre_usuario }}</h7>
+                </div>
+                <a href="{% url 'cerrar_sesion' %}">
+                    <button type="button" id="cerrar-sesion">Cerrar sesión</button>
+                </a>
+            </div>
+            
+        </nav>
+       
+        <div class="wrapper">
+
+            <div class = "dime-hilo">
+                <div class ="primera-caja">
+                    <h5 class = "nombre-perfil-or" id="perfil-usuario">{{ nombre_usuario }}</h5>
+                    <div class = "foto-or">
+                        <img class = "perfil-or" src="{% static 'core/img/fotoperfil.png' %}" draggable="false">
+                    </div>
+                </div>
+                <div class ="segunda-caja">
+
+                    <h5 class="bloque-superior"></h5>
+                    <h5 class="apertura"></h5>
+
+                    <div id = "editar-datos">
+                        
+                        <div class="fila" style="display: flex; flex-direction: row;">
+                            <h5 class="dato-usuario" style="color: white; position: relative; margin-top: -280px; margin-left: 15px;">Nombre: {{ usuario.nombre }}</h5>
+                        
+                        </div>
+                        <div class="fila" style="display: flex; flex-direction: row;">
+                            <h5 style="color: white; position: relative; margin-top: -220px; margin-left: 15px;">Nombre de usuario: {{ usuario.nombre_usuario }}</h5>
+                        
+                        </div>
+                        <div class="fila" style="display: flex; flex-direction: row;">
+                            <h5 style="color: white; position: relative; margin-top: -160px; margin-left: 15px;">Email: {{ credenciales.email }}</h5>
+                        
+                        </div>
+                        <div class="fila" style="display: flex; flex-direction: row;">
+                            <h5 style="color: white; position: relative; margin-top: -100px; margin-left: 15px;">Contrasena: {{ credenciales.contrasena }}</h5>
+                            
+                        </div>
+                        <button class="editar" id="activar">Editar</button>
+
+                    </div>
+                    
+                    <form id="editar-formulario" method="POST" action="{% url 'editar_cuenta' %}" class="validacion {% if not mostrar_formulario %}hidden-form{% endif %}"  novalidate>
+                        <div class="primera-linea">
+                            <input style="position: relative; width: 350px; margin-top: 0px; margin-left: 15px;" 
+                                   name="nombre" 
+                                   type="text" 
+                                   class="formulario" 
+                                   id="nombre-input" 
+                                   value="{{ usuario.nombre }}" 
+                                   required>
+                            <div style="margin-left: 15px; color: white;" class="error-message" id="nombre-error"></div>
+                        </div>
+                        
+                        <div class="segunda-linea">
+                            <input style="position: relative; width: 350px; margin-top: 20px; margin-left: 15px;" 
+                                   name="nombre_usuario" 
+                                   type="text" 
+                                   class="formulario" 
+                                   id="nombre-usuario-input" 
+                                   value="{{ usuario.nombre_usuario }}" 
+                                   required>
+                            <div style="margin-left: 15px; color: white;" class="error-message" id="nombre-usuario-error"></div>
+                        </div>
+                        
+                        <div class="tercera-linea">
+                            <input style="position: relative; width: 350px; margin-top: 25px; margin-left: 15px;" 
+                                   name="email" 
+                                   type="email" 
+                                   class="formulario" 
+                                   id="email-input" 
+                                   value="{{ credenciales.email }}" 
+                                   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
+                                   required>
+                            <div style="margin-left: 15px; color: white;" class="error-message" id="email-error"></div>
+                        </div>
+                        
+                        <div class="cuarta-linea">
+                            <input style="position: relative; width: 350px; margin-top: 30px; margin-left: 15px;" 
+                                   name="contrasena" 
+                                   type="password" 
+                                   class="formulario" 
+                                   id="contrasena-input" 
+                                   placeholder="Nueva contraseña" 
+                                   minlength="8" 
+                                   required>
+                            <div style="margin-left: 15px; color: white;" class="error-message" id="contrasena-error"></div>
+                        </div>
+                        
+                        <div class ="boton">
+                            {% csrf_token %}
+                           
+                            <button style="margin-top: 73px;" type="submit" class="editar">Enviar</button>
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>  
+        </div>
+        
+        <script src="{% static 'core/js/micuenta.js' %}"></script>
+    </body>
+</html>

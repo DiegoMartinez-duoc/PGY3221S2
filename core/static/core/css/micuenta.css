@@ -1,0 +1,223 @@
+* {
+    user-select: none;  
+}
+
+
+body {
+    background-color: black;
+    margin: 0rem;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+
+nav {
+    background-color: rgb(85, 83, 83);
+    min-height: 50px;
+    border-bottom: 1px solid rgb(100, 100, 100);
+    color: white;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 0 20px; 
+}
+
+.titulo {
+    display: flex;
+    align-items: center; 
+    cursor: pointer;
+}
+
+.titulo > h1 {
+    position: absolute;
+    top: -10px;
+}
+
+.right-nav {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+}
+
+#logo-imagen {
+    width: 80px; 
+    height: auto;
+    margin-right: 10px; 
+}
+
+.right-nav > button, a button {
+    display: block;
+    margin: 20px auto;
+    width: 150px;
+    padding: 5px 15px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    
+    background-color: #404040;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.right-nav > button:hover {
+    background-color: black;
+}
+
+.right-nav > a button:hover {
+    background-color: black;
+}
+
+.right-nav > #perfil {
+    width: 150px;
+    background-color: #404040;
+    border-radius: 10px;
+}
+
+#perfil > img {
+    width: 40px;
+}
+
+#perfil > h7 {
+    position: absolute;
+    top: 24px;
+    margin: 5px;
+}
+
+.wrapper {
+    background-color: #404040;
+    width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    padding: 20px;
+    border-radius: 10px;
+    gap: 20px;              
+    justify-content: center;
+    flex-wrap: wrap;     
+    margin-top: 50px;   
+    
+}
+
+.dime-hilo {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 1200px;
+    overflow: hidden; 
+    align-items: flex-start; 
+    position: relative;
+    gap: 0; 
+}
+
+.primera-caja {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.segunda-caja {
+    display: flex;
+    flex-direction: column;
+}
+
+.nombre-perfil-or {
+    display: flex;
+    color: rgb(229, 229, 229);
+    width: 120px;
+    height: 30px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #404040;
+    background-color: rgb(85, 83, 83);
+}
+
+.foto-or {
+    width: 120px;
+    height: 280px;
+    background-color: rgb(85, 83, 83);
+    border: 1px solid #404040;
+    margin-top: -22px;
+}
+
+.perfil-or {
+    width: 8vmin;
+    height: 8vmin;
+}
+
+.bloque-superior {
+    top: 102px;
+    left: 290px;
+    display: flex;
+    width: 1080px; 
+    height: 30px;
+    text-align: center;
+    justify-content: center;
+    border: 1px solid #404040;
+    background-color: rgb(85, 83, 83);
+}
+
+.fila {
+    margin-top: -10px;
+}
+
+.editar {
+    height: 40px;
+    width: 60px;
+    margin-left: 1000px;
+    margin-top: -35px;
+    font-size: 12px;
+    background-color: rgb(85, 83, 83);
+    color: rgb(229, 229, 229);
+    border: 1px solid #404040;
+    cursor: pointer;
+    
+}
+
+.editar:hover {
+    background-color: black;
+}
+
+.apertura {
+    height: 280px;
+    width: 1080px; 
+    color: rgb(229, 229, 229);
+    background-color: rgb(85, 83, 83);
+    border: 1px solid #404040;
+    margin-top: -22px; 
+    text-indent: 5px;
+}
+
+.validacion { 
+    position: absolute; 
+    top: 75px;
+}
+
+.hidden-form {
+    display: none;
+}
+
+/* .dato-usuario {
+    color: white; 
+    position: relative; 
+    margin-top: -280px; 
+    margin-left: 15px;
+} */
+
+
+
+
+
+
+
+
+
+
+

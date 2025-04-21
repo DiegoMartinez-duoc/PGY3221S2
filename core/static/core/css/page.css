@@ -1,0 +1,178 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    margin: 0;
+    overflow-x: hidden;
+    
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+}
+
+.wrapper {
+    display: flex;
+    
+
+    position: relative;
+    
+    background-color: rgb(85, 83, 83);
+    width: 1000px;
+    height: 400px;
+    padding: 20px;
+    border-radius: 10px; 
+}
+
+.wrapper > h2 {
+    color: white;
+    position: absolute;
+    top: 150px;
+}
+
+
+.titulo {
+    display: flex;
+    align-items: center; 
+    cursor: pointer;
+}
+
+
+
+.titulo > #logo-imagen {
+    position: absolute;
+    top: 10px;
+    width: 80px; 
+    height: auto;
+    margin-right: 10px; 
+}
+
+#nombre-input {
+    position: absolute;
+    top: 10px;
+    left: 550px;
+}
+
+#nombre-usuario-input {
+    position: absolute;
+    top: 60px;
+    left: 550px;
+}
+
+#email-input {
+    position: absolute;
+    top: 110px;
+    left: 550px;
+}
+
+#contrasena-input {
+    position: absolute;
+    top: 160px;
+    left: 550px;
+}
+
+#confirmar-contrasena-input {
+    position: absolute;
+    top: 210px;
+    left: 550px;
+}
+
+#fecha-input {
+    position: absolute;
+    top: 260px;
+    left: 550px;
+}
+
+.ir-registro {
+    position: absolute;
+    top: 390px;
+    left: 680px;
+}
+
+
+
+
+
+
+.registrar {
+    position: absolute;
+    top: 340px;
+    left: 780px;
+
+    display: block;
+    margin: 20px auto;
+    width: 150px;
+    
+    padding: 5px 15px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    align-items: center;
+    justify-content: center;
+
+   
+    border: none;
+    
+    
+    background-color: #404040;
+    
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.registrar:hover {
+    background-color: black;
+}
+
+
+
+
+.formulario {
+    display: block;
+    margin: 20px auto;
+    width: 350px;
+    height: 30px;
+    padding: 5px 15px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #404040;
+    
+    
+    background-color: rgb(85, 83, 83);
+    
+   
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+
+
+@media (max-width: 1024px) {
+    .wrapper {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        width: 95%;
+        padding: 15px;
+    }
+    .titulo img {
+        width: 60px;
+    }
+    .titulo h1 {
+        font-size: 24px;
+    }
+    .formulario {
+        font-size: 12px;
+    }
+    .registrar {
+        font-size: 12px;
+        padding: 8px;
+    }
+}

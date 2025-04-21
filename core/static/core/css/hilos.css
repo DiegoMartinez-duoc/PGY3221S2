@@ -1,0 +1,368 @@
+* {
+    user-select: none;  
+}
+
+
+body {
+    background-color: black;
+    margin: 0rem;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+
+footer {
+    display: flex;
+    position: absolute;
+    top: 1550px;
+    width: 1750px;
+    height: 150px;
+    background-color: black;
+    
+}
+
+footer h5 {
+    color: white;
+}
+
+footer h6 {
+    color: white;
+}
+
+nav {
+    background-color: rgb(85, 83, 83);
+    min-height: 50px;
+    border-bottom: 1px solid rgb(100, 100, 100);
+    color: white;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 0 20px; 
+}
+
+.titulo {
+    display: flex;
+    align-items: center; 
+    cursor: pointer;
+}
+
+.titulo > h1 {
+    position: absolute;
+    top: -10px;
+}
+
+.right-nav {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+}
+
+#logo-imagen {
+    width: 80px; 
+    height: auto;
+    margin-right: 10px; 
+}
+
+.right-nav > button, a button {
+    display: block;
+    margin: 20px auto;
+    width: 150px;
+    padding: 5px 15px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    
+    background-color: #404040;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.right-nav > button:hover {
+    background-color: black;
+}
+
+.right-nav > a button:hover {
+    background-color: black;
+}
+
+.right-nav > #perfil {
+    width: 150px;
+    background-color: #404040;
+    border-radius: 10px;
+}
+
+#perfil > img {
+    width: 40px;
+}
+
+#perfil > h7 {
+    position: absolute;
+    top: 24px;
+    margin: 5px;
+}
+
+.wrapper {
+    background-color: #404040;
+    width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    padding: 20px;
+    border-radius: 10px;
+    gap: 20px;              
+    justify-content: center;
+    flex-wrap: wrap;     
+    margin-top: 50px;   
+    
+}
+
+.dime-hilo {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 1200px;
+    overflow: hidden; 
+    align-items: flex-start; 
+    position: relative;
+    gap: 0; 
+}
+
+.primera-caja {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.segunda-caja {
+    display: flex;
+    flex-direction: column;
+}
+
+.nombre-perfil-or {
+    display: flex;
+    color: rgb(229, 229, 229);
+    width: 120px;
+    height: 30px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #404040;
+    background-color: rgb(85, 83, 83);
+}
+
+.foto-or {
+    width: 120px;
+    height: 120px;
+    background-color: rgb(85, 83, 83);
+    border: 1px solid #404040;
+    margin-top: -22px;
+}
+
+.perfil-or {
+    width: 8vmin;
+    height: 8vmin;
+}
+
+.bloque-superior {
+    top: 102px;
+    left: 290px;
+    display: flex;
+    width: 1080px; 
+    height: 30px;
+    text-align: center;
+    justify-content: center;
+    border: 1px solid #404040;
+    background-color: rgb(85, 83, 83);
+}
+
+.apertura {
+    height: 120px;
+    width: 1080px; 
+    color: rgb(229, 229, 229);
+    background-color: rgb(85, 83, 83);
+    border: 1px solid #404040;
+    margin-top: -22px; 
+    text-indent: 5px;
+}
+
+.imagen-or {
+    height: 80px;
+    width: 80px; 
+    color: rgb(229, 229, 229);
+    background-color: rgb(85, 83, 83);
+    border: 1px solid #404040;
+    margin-top: -120px;
+    margin-left: 15px;
+}
+
+.hilo-info {
+    color: rgb(229, 229, 229);
+    margin-top: -70px; 
+    margin-left: 105px;
+}
+
+
+.boton-like {
+    height: 40px;
+    width: 40px; 
+    margin-top: -70px; 
+    margin-left: 1000px;
+    background-color: #404040;
+    border-radius: 5px;
+    border: none;
+}
+
+.boton-like:hover {
+    background-color: black;
+}
+
+.boton-like > .icono {
+    height: 30px;
+    width: 30px; 
+}
+
+.cantidad-like {
+    margin-top: 5px; 
+    margin-left: 1012px;
+}
+
+.cantidad-like > .cantidad {
+    color: white;
+}
+
+.comentario {
+    height: 140px;
+    width: 1064px;
+    
+    padding: 5px; 
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    
+    margin-left: 1px;
+    margin-top: 23px;
+    background-color: rgb(85, 83, 83);
+    border: 2px solid black;
+    transition: background 0.3s ease, transform 0.2s ease;
+    text-align: left; 
+}
+
+.publicar {
+    height: 40px;
+    width: 60px;
+    margin-left: 1000px;
+    margin-top: -45px;
+    font-size: 12px;
+    background-color: rgb(85, 83, 83);
+    color: rgb(229, 229, 229);
+    border: 1px solid #404040;
+    cursor: pointer;
+    
+}
+
+.publicar:hover {
+    background-color: black;
+}
+
+
+
+@media (max-width: 1023px) {
+    .wrapper {
+        width: 100%;
+    }
+
+    .dime-hilo {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .bloque-superior {
+        width: 75%;
+    }
+
+    .apertura {
+        width: 75%;
+    }
+
+    .hilo-info {
+        width: 55%;
+    }
+
+    .primera-caja, .segunda-caja {
+        width: inherit;
+        text-align: center;
+    }
+
+    .imagen-or {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* 
+@media (max-width: 767px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .titulo {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #logo-imagen {
+        width: 50px;
+    }
+
+    .right-nav {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    #perfil {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    .wrapper {
+        width: 100%;
+        padding: 10px;
+        margin-top: 20px;
+    }
+
+    .dime-hilo {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .nombre-perfil-or, .foto-or {
+        width: 100%;
+    }
+
+    .imagen-or {
+        width: 70px;
+        height: 70px;
+    }
+
+    .hilo-info {
+        text-align: center;
+    }
+
+    .boton-like {
+        width: 30px;
+        height: 30px;
+    }
+} */

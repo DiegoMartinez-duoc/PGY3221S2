@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    {% load static %}
+    <head>
+        <title>SayThread</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'core/css/index.css' %}">
+        <!-- Estilo bootstrap -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+
+        <nav>
+            <div class="titulo">
+                <img id="logo-imagen" src="{% static 'core/img/threadIcon.png' %}"/>
+                <a id="gothread" href="{% url 'home' %}"><h1 style="position: absolute;
+                    top: 9px;
+                    left: 20px;
+                    font-weight: bold;
+                    font-size: 23.85px;
+                    font-family: serif;
+                    color: white;">Say<br>Thread</h1></a>
+            </div>
+            <div class="right-nav">
+                <div id = "perfil">
+                    <img class = "imagen" src="{% static 'core/img/fotoperfil.png' %}" draggable="false">
+                    <h7 id = "nombre-usuario">{{ nombre_usuario }}</h7>
+                </div>
+                <a href="{% url 'cerrar_sesion' %}">
+                    <button type="button" id="cerrar-sesion">Cerrar sesión</button>
+                </a>
+            </div>
+            
+        </nav>
+
+
+
+        
+     
+
+        <div style="top: 75px;" id = "otros-juegos">
+
+            
+            
+            <h1>Hilos Creados</h1>
+
+            
+            {% for thread in threads%}
+            {% if forloop.counter0|divisibleby:3 %}<div class="contenedor-hilos">{% endif %}
+                
+            
+                <div class = "caja-hilo">
+                    <h3 class>{{ thread.nombre_thread }}</h3>
+                    {% if thread.imagen %}
+                        <img class = "imagen" src="{{ thread.imagen.url }}" draggable="false">
+                    {% endif %}
+                    <h5 class = "resumen">
+                        {{ thread.mensaje }}</h5>
+                    
+
+                    <h4 id = "cantidad-usuarios">0 participantes</h4>
+                    <h4 id = "cantidad-en-linea">0 en linea</h4>
+
+                    
+                    <a href="{% url 'ver_thread' id=thread.thread_id %}" class="boton-foro">Ir al hilo</a>
+                    <button class="boton-like">
+                        <img src="{% static 'core/img/like.png' %}" alt="Like" class="icono">
+                    </button>
+                    <h6 id = "cantidad-like"><span id="cantidad">{{ thread.likes }}</span></h6>
+                    
+                </div>
+
+                
+            {% if forloop.counter|divisibleby:3 or forloop.last %}</div>{% endif %}
+            {% endfor %}
+            <footer class="bg-dark text-white py-4">
+                <div class="container text-center">
+                    <h5>SayThread &copy; 2025</h5>
+                    <p>Contacto:</p>
+                    <p class="mb-1"><strong>Teléfono:</strong> +56 9 8234 8927</p>
+                    <p><strong>Correo:</strong> <a href="mailto:noexiste@duocuc.cl" class="text-white text-decoration-none">noexiste@duocuc.cl</a></p>
+                </div>
+            </footer>
+        <script src="{% static 'core/js/index.js' %}"></script>
+    </body>
+</html>

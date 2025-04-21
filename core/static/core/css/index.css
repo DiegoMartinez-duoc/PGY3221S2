@@ -1,0 +1,378 @@
+* {
+    user-select: none;  
+}
+
+body {
+    background-color: black;
+    margin: 0rem;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+#juegos > .imagen {
+    width: 70vmin;
+    height: 56vmin;
+    object-fit: cover;
+    object-position: center;
+    pointer-events: none;
+}
+
+#juegos {
+    display: flex;
+    gap: 4vmin;
+    position: absolute;
+    left: 750px;
+    top: 300px;
+    transform: translate(-50%, -50%);
+   
+}
+
+
+#nombre-juego {
+    display: block;
+    margin: 20px auto;
+    width: 500px;
+    height: 90px;
+    padding: 15px 30px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 500px;
+    top: 400px;
+    background-color: black;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#nombre-juego:hover {
+    background-color: rgb(85, 83, 83);
+    transform: scale(1.05);
+}
+
+#otros-juegos {
+    position: absolute;
+    border-top: 1px solid rgb(100, 100, 100);
+    background-color: #404040;
+    border-bottom: 1px solid rgb(100, 100, 100);
+    top: 600px;
+}
+
+.contenedor-hilos {
+    display: flex;          
+    gap: 20px;              
+    justify-content: center;
+    flex-wrap: wrap;        
+    margin: 10px;
+    width: 1520px;
+    
+}
+
+/* footer {
+    display: flex;
+    position: absolute;
+    top: 1548px;
+    width: 1750px;
+    height: 180px;
+    left: -100px;
+    background-color: black;
+    
+}
+
+footer h5 {
+    color: white;
+}
+
+footer h6 {
+    color: white;
+} */
+
+
+#otros-juegos > h1 {
+    color: white;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.caja-hilo {
+    background-color: rgb(85, 83, 83);
+    width: 420px;
+    height: 420px; 
+    position: relative; 
+    overflow: hidden; 
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+
+.fila-reversa {
+    flex-direction: row-reverse; 
+    direction: rtl; 
+}
+
+
+.caja-hilo > .imagen {
+    position: absolute; 
+    top: 60px; 
+    left: 20px; 
+    width: 200px; 
+    height: 200px; 
+    object-fit: cover;
+}
+
+.caja-hilo > h3 {
+    position: absolute;
+    left: 25px; 
+    color: white;
+    margin-top: 8px;
+}
+
+.caja-hilo > .resumen {
+    position: absolute;
+    white-space: pre-line;
+    left: 20px;
+    top: 250px;
+    color: white;
+}
+
+.caja-hilo > .foro-info {
+    position: absolute;
+    white-space: pre-line;
+    left: 1250px;
+    top: 30px;
+}
+
+.caja-hilo > #cantidad-usuarios {
+    position: absolute;
+    white-space: pre-line;
+    left: 250px;
+    top: 60px;
+    color: white;
+    font-size: 20px;
+}
+
+.caja-hilo > #cantidad-en-linea {
+    position: absolute;
+    white-space: pre-line;
+    left: 250px;
+    top: 90px;
+    color: white;
+    font-size: 20px;
+}
+
+.caja-hilo > .boton-foro {
+    display: block;
+    margin: 20px auto;
+    width: 150px;
+    padding: 5px 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 250px;
+    top: 140px;
+    background-color: #404040;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.caja-hilo > .boton-foro:hover {
+    background-color: black;
+}
+
+.caja-hilo > .boton-like {
+    display: block;
+    margin: 20px auto;
+    width: 50px;
+    padding: 5px 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 250px;
+    top: 200px;
+    background-color: #404040;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.caja-hilo > .boton-like:hover {
+    background-color: black;
+}
+
+.boton-like > .icono {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 8px;
+}
+
+.caja-hilo > #cantidad-like {
+    position: absolute;
+    left: 310px;
+    top: 230px;
+    color: white;
+}
+
+
+
+
+
+nav {
+    background-color: rgb(85, 83, 83);
+    min-height: 50px;
+    border-bottom: 1px solid rgb(100, 100, 100);
+    color: white;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 0 20px; 
+}
+
+.titulo {
+    display: flex;
+    align-items: center; 
+}
+
+.titulo > h1 {
+    position: absolute;
+    font-size: 23.85px;
+    top: 9px;
+    
+    font-family: serif;
+    font-weight: bold;
+}
+
+.right-nav {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+}
+
+#logo-imagen {
+    width: 80px; 
+    height: auto;
+    margin-right: 10px; 
+}
+
+.right-nav > button, a button {
+    display: block;
+    margin: 20px auto;
+    width: 150px;
+    padding: 5px 15px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    
+    background-color: #404040;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.right-nav > button:hover {
+    background-color: black;
+}
+
+.right-nav > a button:hover {
+    background-color: black;
+}
+
+.right-nav > #perfil {
+    width: 150px;
+    background-color: #404040;
+    border-radius: 10px;
+}
+
+#perfil > img {
+    width: 40px;
+}
+
+#perfil > h7 {
+    position: absolute;
+    top: 22px;
+    margin: 5px;
+}
+
+.buscador {
+    display: block;
+    margin: 20px auto 20px 180px;
+    width: 450px;
+    padding: 10px 10px 10px 35px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    background: url('../img/buscarIcon.png') no-repeat left 10px center;
+    background-size: 20px; 
+    background-color: #404040;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+@media (max-width: 1024px) {
+    #juego-container {
+        width: 90vw;
+    }
+    #nombre-juego {
+        font-size: 3vw;
+    }
+    #otros-juegos {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    .titulo, .centro-nav, .right-nav {
+        flex-direction: column;
+        width: 100%;
+    }
+    #juegos {
+        width: 100px;
+        display: flex;
+        gap: 4vmin;
+        position: relative;
+        left: 750px;
+        top: 300px; 
+        transform: translate(-50%, -50%);
+    }
+    #nombre-juego {
+        font-size: 3vw;
+        width: 80vw;
+        height: auto;
+    }
+    .contenedor-hilos {
+        flex-direction: column;
+        width: 90%;
+    }
+    .caja-hilo {
+        width: 90%;
+        height: auto;
+    }
+}

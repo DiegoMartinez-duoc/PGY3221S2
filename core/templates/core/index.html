@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    {% load static %}
+    <head>
+        <title>SayThread</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'core/css/index.css' %}">
+        <!-- Estilo bootstrap -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+
+        <nav>
+            <div class="titulo">
+                <img id="logo-imagen" src="{% static 'core/img/threadIcon.png' %}"/>
+                <h1>Say<br>
+                    Thread</h1>
+            </div>
+            <div class="centro-nav">
+                <input type="text" class="buscador" required>
+            </div>
+            <div class="right-nav">
+                {% if not usuario_autenticado %}
+                    <a href="{% url 'registro' %}" id="registro">
+                        <button class="registro">Registrarse</button>
+                    </a>
+                    <a href="{% url 'inicio' %}" id="inicio">
+                        <button class="inicio">Iniciar sesión</button>
+                    </a>
+                {% else %}
+                    <div id="perfil">
+                        <img class="imagen" src="{% static 'core/img/fotoperfil.png' %}" draggable="false">
+                        <h7 id="nombre-usuario">{{ nombre_usuario }}</h7>
+                    </div>
+                    <a href="{% url 'cerrar_sesion' %}">
+                        <button type="button" id="cerrar-sesion">Cerrar sesión</button>
+                    </a>
+                {% endif %}
+            </div>
+            
+        </nav>
+
+
+
+        <div id = "juegos" data-mouse-down-at="0" data-prev-percentage="-50">
+            <img class = "imagen" src="{% static 'core/img/hilosCreados.png' %}" draggable="false" data-url="rol.html">
+            <img class = "imagen" src="{% static 'core/img/crearHilo.png' %}" draggable="false" data-url="accion.html">
+            <img class = "imagen" src="{% static 'core/img/miCuenta.png' %}" draggable="false" data-url="estrategia.html">
+            
+            
+        </div>
+
+        <form id="form-envio" action="{% url 'slider' %}" method="POST">
+            {% csrf_token %}
+            
+            <input type="hidden" name="url" id="input-url" style="display:none;">
+            <button type="submit" id="nombre-juego">></button>
+        </form>
+        
+     
+
+        <div id = "otros-juegos">
+
+            
+            
+            <h1>Hilos recomendados</h1>
+
+            
+            {% for thread in threads%}
+            {% if forloop.counter0|divisibleby:3 %}<div class="contenedor-hilos">{% endif %}
+                
+            
+                <div class = "caja-hilo">
+                    <h3 class>{{ thread.nombre_thread }}</h3>
+                    {% if thread.imagen %}
+                        <img class = "imagen" src="{{ thread.imagen.url }}" draggable="false">
+                    {% endif %}
+                    <h5 class = "resumen">
+                        {{ thread.mensaje }}</h5>
+                    
+
+                    <h4 id = "cantidad-usuarios">356 participantes</h4>
+                    <h4 id = "cantidad-en-linea">300 en linea</h4>
+
+                    
+                    <a href="{% url 'ver_thread' id=thread.thread_id %}" class="boton-foro">Ir al hilo</a>
+                    <button class="boton-like">
+                        <img src="{% static 'core/img/like.png' %}" alt="Like" class="icono">
+                    </button>
+                    <h6 id = "cantidad-like"><span id="cantidad">{{ thread.likes }}</span></h6>
+                    
+                </div>
+
+                
+            {% if forloop.counter|divisibleby:3 or forloop.last %}</div>{% endif %}
+            {% endfor %}
+
+               
+
+        <footer class="bg-dark text-white py-4">
+            <div class="container text-center">
+                <h5>SayThread &copy; 2025</h5>
+                <p>Contacto:</p>
+                <p class="mb-1"><strong>Teléfono:</strong> +56 9 8234 8927</p>
+                <p><strong>Correo:</strong> <a href="mailto:noexiste@duocuc.cl" class="text-white text-decoration-none">noexiste@duocuc.cl</a></p>
+            </div>
+        </footer>
+        <script src="{% static 'core/js/index.js' %}"></script>
+    </body>
+</html>
